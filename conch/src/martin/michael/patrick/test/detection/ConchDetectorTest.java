@@ -3,7 +3,7 @@
  */
 package martin.michael.patrick.test.detection;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -22,6 +22,7 @@ public class ConchDetectorTest {
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		// TODO implement or remove and why does PMD not like this?
 	}
 
 	/**
@@ -29,6 +30,7 @@ public class ConchDetectorTest {
 	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
+		// TODO implement or remove and why does PMD not like this?
 	}
 
 	/**
@@ -36,6 +38,7 @@ public class ConchDetectorTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
+		// TODO implement or remove
 	}
 
 	/**
@@ -43,6 +46,7 @@ public class ConchDetectorTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		// TODO implement or remove
 	}
 
 	@Test

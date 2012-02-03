@@ -8,5 +8,11 @@ package martin.michael.patrick.core.detection;
  *
  */
 public class ConchDetector {
+	
+	public ConchDetector() {
+		//TODO implement any necessary initialisation
+		
+	}
+	
 
 }
