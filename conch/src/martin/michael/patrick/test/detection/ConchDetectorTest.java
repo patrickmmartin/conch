@@ -3,12 +3,10 @@
  */
 package martin.michael.patrick.test.detection;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Test;
+import martin.michael.patrick.core.detection.ConchDetector;
+
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.Assert;
+import org.testng.annotations.Test;
 
 /**
  * @author patrick
@@ -17,40 +15,21 @@ import org.testng.Assert;
 public class ConchDetectorTest {
 
 	/**
-	 * @throws java.lang.Exception
-	 */
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-		// TODO implement or remove and why does PMD not like this?
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-		// TODO implement or remove and why does PMD not like this?
-	}
-
-	/**
-	 * @throws java.lang.Exception
+	 * setup Method for the detector test
 	 */
 	@BeforeMethod
-	public void setUp() throws Exception {
-		// TODO implement or remove
+	public static void setUp() {
+		// TODO implement or remove and why does PMD not like this?
 	}
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@AfterMethod
-	public void tearDown() throws Exception {
-		// TODO implement or remove
-	}
-
-	@Test
+	@Test( groups = {"stubs"} )
 	public void test() {
-		Assert.fail("Not yet implemented");
+		//  nothing here
+	}
+
+	@Test( groups = {"stubs"} )
+	public void testConstruction() {
+		new ConchDetector();
 	}
 
 }
