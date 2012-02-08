@@ -3,13 +3,12 @@
  */
 package martin.michael.patrick.test.detection;
 
-import static org.junit.Assert.fail;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
 
 /**
  * @author patrick
@@ -36,7 +35,7 @@ public class ConchDetectorTest {
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@Before
+	@BeforeMethod
 	public void setUp() throws Exception {
 		// TODO implement or remove
 	}
@@ -44,14 +43,14 @@ public class ConchDetectorTest {
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@After
+	@AfterMethod
 	public void tearDown() throws Exception {
 		// TODO implement or remove
 	}
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		Assert.fail("Not yet implemented");
 	}
 
 }
