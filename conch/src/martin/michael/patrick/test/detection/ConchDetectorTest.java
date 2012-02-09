@@ -19,7 +19,7 @@ public class ConchDetectorTest {
 	 */
 	@BeforeMethod
 	public static void setUp() {
-		// TODO implement or remove and why does PMD not like this?
+		// nothing here yet
 	}
 
 	@Test( groups = {"stubs"} )
