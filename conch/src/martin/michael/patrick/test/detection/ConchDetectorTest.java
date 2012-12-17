@@ -9,6 +9,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
+ * 
+ * ConchDetectorTest is the test class for {@link ConchDetector}
  * @author patrick
  *
  */
