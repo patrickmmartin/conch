@@ -13,6 +13,9 @@ import java.util.logging.Logger;
  */
 public class ConchDetector {
 
+	/**
+	 * LOGGER is a static instance of a java.util.logging.Logger 
+	 */
 	private static final Logger LOGGER = Logger.getLogger("com.wombat.nose");
 
 	public ConchDetector() {
