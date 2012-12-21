@@ -2,7 +2,6 @@ package martin.michael.patrick.conch.core.detection;
 
 import java.awt.image.RenderedImage;
 
-import martin.michael.patrick.conch.core.detection.types.ImageMetrics;
 
 /**
  * @author Patrick

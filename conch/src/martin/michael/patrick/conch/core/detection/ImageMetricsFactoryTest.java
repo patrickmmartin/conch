@@ -4,7 +4,6 @@ import static org.testng.Assert.assertNotNull;
 
 import java.awt.image.BufferedImage;
 
-import martin.michael.patrick.conch.core.detection.types.ImageMetrics;
 
 import org.testng.annotations.Test;
 

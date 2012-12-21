@@ -1,7 +1,7 @@
 /**
  * 
  */
-package martin.michael.patrick.conch.core.detection.types;
+package martin.michael.patrick.conch.core.detection;
 
 /**
  * @author Patrick

@@ -1,4 +1,4 @@
-package martin.michael.patrick.conch.core.detection.types;
+package martin.michael.patrick.conch.core.detection;
 
 
 import org.testng.Assert;

@@ -1,6 +1,6 @@
-package martin.michael.patrick.conch.core.detection.types;
+package martin.michael.patrick.conch.core.detection;
 
-import martin.michael.patrick.conch.core.detection.types.ImageSourceDescriptor.SourceType;
+import martin.michael.patrick.conch.core.detection.ImageSourceDescriptor.SourceType;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

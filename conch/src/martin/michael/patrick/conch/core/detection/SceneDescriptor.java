@@ -1,7 +1,7 @@
 /**
  * 
  */
-package martin.michael.patrick.conch.core.detection.types;
+package martin.michael.patrick.conch.core.detection;
 
 import java.util.ArrayList;
 import java.util.Iterator;
