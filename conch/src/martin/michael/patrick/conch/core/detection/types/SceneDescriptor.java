@@ -37,8 +37,10 @@ public class SceneDescriptor implements Iterable<ImageSourceDescriptor>{
 		return imageSources.size();
 	}
 	
-	void addImage(ImageSourceDescriptor imageSource)
+	void addImage(final ImageSourceDescriptor imageSource)
 	{
+		if (null == imageSource)
+			throw new IllegalArgumentException("image source may not be null");
 		if (imageSources.contains(imageSource))
 			throw new IllegalArgumentException("image source is already present");
 		imageSources.add(imageSource);
