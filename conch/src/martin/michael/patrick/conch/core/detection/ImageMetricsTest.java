@@ -1,4 +1,4 @@
-package martin.michael.patrick.conch.detection.test;
+package martin.michael.patrick.conch.core.detection;
 
 import martin.michael.patrick.conch.core.detection.types.ImageMetrics;
 
