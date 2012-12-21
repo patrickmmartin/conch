@@ -16,9 +16,21 @@ public class ImageSourceDescriptor {
 	 *
 	 */
 	public enum SourceType {
+		/**
+		 * 
+		 */
 		Undefined,
+		/**
+		 * 
+		 */
 		File,
+		/**
+		 * 
+		 */
 		Stream,
+		/**
+		 * 
+		 */
 		Unknown
 			
 
@@ -30,6 +42,11 @@ public class ImageSourceDescriptor {
 	
 	final String sourceFile;
 
+	/**
+	 * @param position_ time position of the frame
+	 * @param sourceType_ type of the frame source
+	 * @param sourceFile_ the source file for the underlying data
+	 */
 	public ImageSourceDescriptor(long position_, SourceType sourceType_, String sourceFile_) {
 		this.position = position_;
 		this.sourceType = sourceType_;

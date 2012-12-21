@@ -11,6 +11,9 @@ import org.testng.annotations.DataProvider;
  */
 public class SceneTestDataProvider {
 
+	/**
+	 * @return the test data for a single scene
+	 */
 	@DataProvider(name = "singleSceneMetricsStream")
 	public static Object[][] singleSceneMetricsStream() {
 		return new Object[][] { new Object[] {
@@ -18,6 +21,9 @@ public class SceneTestDataProvider {
 				} };
 	}
 
+	/**
+	 * @return the test data for two scenes
+	 */
 	@DataProvider(name = "twoSceneMetricsStream")
 	public static Object[][] twoSceneMetricsStream() {
 		return new Object[][] { new Object[] { new ImageMetrics(1, 0, 0),

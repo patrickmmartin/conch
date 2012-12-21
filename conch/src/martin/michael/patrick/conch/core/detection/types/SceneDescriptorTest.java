@@ -21,17 +21,26 @@ public class SceneDescriptorTest {
 		SceneDescriptor.clearScenes();
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
 	public void constructor() {
 		new SceneDescriptor("dummy");
 	}
 
+	/**
+	 * 
+	 */
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void constructDupes() {
 		new SceneDescriptor("dummy");
 		new SceneDescriptor("dummy");
 	}
 
+	/**
+	 * 
+	 */
 	@Test
 	public void imageCount() {
 		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
@@ -39,6 +48,9 @@ public class SceneDescriptorTest {
 
 	}
 
+	/**
+	 * 
+	 */
 	@Test
 	public void iterator() {
 		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
@@ -48,6 +60,9 @@ public class SceneDescriptorTest {
 		}
 	}
 	
+	/**
+	 * 
+	 */
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testAddNull()
 	{
@@ -55,6 +70,9 @@ public class SceneDescriptorTest {
 		sceneDescriptor.addImage(null);
 	}
 
+	/**
+	 * 
+	 */
 	@Test
 	public void testAddValid()
 	{

@@ -53,7 +53,7 @@ public class SceneDescriptor implements Iterable<ImageSourceDescriptor>{
 	
 	/**
 	 * constructor - the class will contain no frames
-	 * @param name_
+	 * @param name_ name of the scene
 	 */
 	//  TODO - make the backing store for frames immutable too?
 	public SceneDescriptor(String name_)

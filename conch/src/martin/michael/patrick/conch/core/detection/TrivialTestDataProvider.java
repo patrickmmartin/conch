@@ -14,6 +14,9 @@ import org.testng.annotations.DataProvider;
  */
 public class TrivialTestDataProvider {
 
+	/**
+	 * @return the trivial test set
+	 */
 	@DataProvider(name = "trivialMetricsStream")
 	public static Object[][] trivialMetricsStream() {
 		return new Object[][] {
