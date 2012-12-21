@@ -1,5 +1,7 @@
 package martin.michael.patrick.conch.core.detection.types;
 
+import martin.michael.patrick.conch.core.detection.types.ImageSourceDescriptor.SourceType;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -44,5 +46,21 @@ public class SceneDescriptorTest {
 		{
 			fail("new instance should be empty");
 		}
+	}
+	
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testAddNull()
+	{
+		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
+		sceneDescriptor.addImage(null);
+	}
+
+	@Test
+	public void testAddValid()
+	{
+		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
+		sceneDescriptor.addImage(new ImageSourceDescriptor(0, SourceType.File, ""));
+		sceneDescriptor.addImage(new ImageSourceDescriptor(2, SourceType.File, ""));
+		sceneDescriptor.addImage(new ImageSourceDescriptor(3, SourceType.File, ""));
 	}
 }
