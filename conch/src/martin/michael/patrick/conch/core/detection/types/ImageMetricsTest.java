@@ -1,6 +1,5 @@
-package martin.michael.patrick.conch.core.detection;
+package martin.michael.patrick.conch.core.detection.types;
 
-import martin.michael.patrick.conch.core.detection.types.ImageMetrics;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
