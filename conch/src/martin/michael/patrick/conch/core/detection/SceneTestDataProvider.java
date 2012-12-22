@@ -1,28 +1,62 @@
 package martin.michael.patrick.conch.core.detection;
 
-import martin.michael.patrick.conch.core.detection.types.ImageMetrics;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.testng.annotations.DataProvider;
 
 /**
  * data provider class for the scenes test data
+ * 
  * @author Patrick
  * 
  */
 public class SceneTestDataProvider {
 
-	@DataProvider(name = "singleSceneMetricsStream")
-	public static Object[][] singleSceneMetricsStream() {
-		return new Object[][] { new Object[] {
-				new ImageMetrics(1, 0, 0), new ImageMetrics(1, 0, 0), new ImageMetrics(1, 0, 0)
-				} };
+	/**
+	 * @return the trivial test set
+	 */
+	@DataProvider(name = "trivialScene")
+	public static Object[][] trivialSourceStream() {
+
+		List<ImageMetrics> imageMetricsList = new ArrayList<ImageMetrics>();
+		imageMetricsList.add(new ImageMetrics());
+		imageMetricsList.add(new ImageMetrics());
+		imageMetricsList.add(new ImageMetrics());
+
+		return new Object[][] { new Object[] { imageMetricsList } };
 	}
 
-	@DataProvider(name = "twoSceneMetricsStream")
+	/**
+	 * @return the test data for a single scene
+	 */
+	@DataProvider(name = "singleScene")
+	public static Object[][] singleSceneMetricsStream() {
+
+		List<ImageMetrics> imageMetricsList = new ArrayList<ImageMetrics>();
+		imageMetricsList.add(new ImageMetrics(1, 0, 0));
+		imageMetricsList.add(new ImageMetrics(1, 0, 0));
+		imageMetricsList.add(new ImageMetrics(1, 0, 0));
+
+		return new Object[][] { new Object[] { imageMetricsList } };
+
+	}
+
+	/**
+	 * @return the test data for two scenes
+	 */
+	@DataProvider(name = "twoScenes")
 	public static Object[][] twoSceneMetricsStream() {
-		return new Object[][] { new Object[] { new ImageMetrics(1, 0, 0),
-				new ImageMetrics(1, 0, 0), new ImageMetrics(1, 0, 0), new ImageMetrics(1, 0, 0),
-				new ImageMetrics(0, 1, 0), new ImageMetrics(0, 1, 0), new ImageMetrics(0, 1, 0) } };
+		List<ImageMetrics> imageMetricsList = new ArrayList<ImageMetrics>();
+		imageMetricsList.add(new ImageMetrics(1, 0, 0));
+		imageMetricsList.add(new ImageMetrics(1, 0, 0));
+		imageMetricsList.add(new ImageMetrics(1, 0, 0));
+
+		imageMetricsList.add(new ImageMetrics(0, 1, 0));
+		imageMetricsList.add(new ImageMetrics(0, 1, 0));
+		imageMetricsList.add(new ImageMetrics(0, 1, 0));
+
+		return new Object[][] { new Object[] { imageMetricsList } };
 	}
 
 }

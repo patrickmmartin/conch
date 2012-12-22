@@ -1,15 +1,21 @@
 package martin.michael.patrick.conch.core.detection;
 
-import martin.michael.patrick.conch.core.detection.types.ImageMetrics;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
+/**
+ * @author Patrick
+ *
+ */
 public class ImageMetricsTest {
 
-  @Test
+  /**
+ * 
+ */
+@Test
   public void constructorRGB() {
 	  final ImageMetrics imageMetrics = new ImageMetrics(2.0, 3.0, 5.0);
 	  assertEquals(imageMetrics.getR(), 2.0);
@@ -17,7 +23,10 @@ public class ImageMetricsTest {
 	  assertEquals(imageMetrics.getB(), 5.0);
   }
 
-  @Test
+  /**
+ * 
+ */
+@Test
   public void constructor() {
 	  final ImageMetrics imageMetrics = new ImageMetrics();
 	  Assert.assertEquals(imageMetrics.getR(), 0.0);

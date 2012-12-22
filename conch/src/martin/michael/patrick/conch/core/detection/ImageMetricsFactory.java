@@ -2,10 +2,17 @@ package martin.michael.patrick.conch.core.detection;
 
 import java.awt.image.RenderedImage;
 
-import martin.michael.patrick.conch.core.detection.types.ImageMetrics;
 
+/**
+ * @author Patrick
+ *
+ */
 public class ImageMetricsFactory {
 
+	/**
+	 * @param ri the RenderedImage to be analysed
+	 * @return the ImageMetrics for the RenderedImage
+	 */
 	public static ImageMetrics buildMetrics(RenderedImage ri)
 	{
 		if (ri == null)
