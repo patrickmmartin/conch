@@ -1,5 +1,6 @@
 package martin.michael.patrick.conch.core.detection;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import martin.michael.patrick.conch.core.detection.ImageSourceDescriptor.SourceType;
@@ -69,7 +70,8 @@ public class SceneDescriptorTest {
 	public void testAddNull()
 	{
 		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
-		sceneDescriptor.addImage(null);
+		ImageSourceDescriptor dummy = null;
+		sceneDescriptor.add(dummy);
 	}
 
 	/**
@@ -79,39 +81,48 @@ public class SceneDescriptorTest {
 	public void testAddValid()
 	{
 		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
-		sceneDescriptor.addImage(new ImageSourceDescriptor(0, SourceType.File, ""));
-		sceneDescriptor.addImage(new ImageSourceDescriptor(2, SourceType.File, ""));
-		sceneDescriptor.addImage(new ImageSourceDescriptor(3, SourceType.File, ""));
+		sceneDescriptor.add(new ImageSourceDescriptor(0, SourceType.File, ""));
+		sceneDescriptor.add(new ImageSourceDescriptor(2, SourceType.File, ""));
+		sceneDescriptor.add(new ImageSourceDescriptor(3, SourceType.File, ""));
 	}
 	
 	/**
-	 * @param imageMetricsList injected list of ImageMetrics instances
 	 * 
 	 */
-	@Test(dataProvider="trivialScene", dataProviderClass=SceneTestDataProvider.class)
-	public void testTrivialSceneDetection(List<ImageMetrics> imageMetricsList)
+	@Test
+	public void testAddList()
 	{
-		// TODO this would ideally yield a SceneDescriptor with the correct results
+		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
+		List<ImageSourceDescriptor> images = new ArrayList<ImageSourceDescriptor>();
+		images.add(new ImageSourceDescriptor(0, SourceType.File, ""));
+		images.add(new ImageSourceDescriptor(2, SourceType.File, ""));
+		images.add(new ImageSourceDescriptor(3, SourceType.File, ""));
+		sceneDescriptor.add(images);
+		assertEquals(images.size(), sceneDescriptor.imageCount(), "image count should be size of list");
 	}
 	
 	/**
-	 * @param imageMetricsList injected list of ImageMetrics instances
 	 * 
 	 */
-	@Test(dataProvider="singleScene", dataProviderClass=SceneTestDataProvider.class)
-	public void testSingleSceneDetection(List<ImageMetrics> imageMetricsList)
+	@Test(expectedExceptions=IllegalArgumentException.class)
+	public void testAddListTwice()
 	{
-		// TODO this would ideally yield a SceneDescriptor with the correct results
+		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
+		List<ImageSourceDescriptor> images = new ArrayList<ImageSourceDescriptor>();
+		images.add(new ImageSourceDescriptor(0, SourceType.File, ""));
+		images.add(new ImageSourceDescriptor(2, SourceType.File, ""));
+		images.add(new ImageSourceDescriptor(3, SourceType.File, ""));
+		sceneDescriptor.add(images);
+		assertEquals(images.size(), sceneDescriptor.imageCount(), "image count should be size of list");
+		try
+		{
+		sceneDescriptor.add(images);
+		}
+		catch(IllegalArgumentException e)
+		{
+			assertEquals(images.size(), sceneDescriptor.imageCount(), "image count should be size of list");
+			throw e;
+		}
 	}
-
-	/**
-	 * @param imageMetricsList injected list of ImageMetrics instances
-	 * 
-	 */
-	@Test(dataProvider="twoScenes", dataProviderClass=SceneTestDataProvider.class)
-	public void testTwoSceneDetection(List<ImageMetrics> imageMetricsList)
-	{
-		// TODO this would ideally yield a SceneDescriptor with the correct results
-	}
-	
+		
 }

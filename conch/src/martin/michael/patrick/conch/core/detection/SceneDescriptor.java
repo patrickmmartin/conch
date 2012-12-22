@@ -4,6 +4,7 @@
 package martin.michael.patrick.conch.core.detection;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -37,13 +38,25 @@ public class SceneDescriptor implements Iterable<ImageSourceDescriptor>{
 		return imageSources.size();
 	}
 	
-	void addImage(final ImageSourceDescriptor imageSource)
+	void add(final ImageSourceDescriptor image)
 	{
-		if (null == imageSource)
+		if (null == image)
 			throw new IllegalArgumentException("image source may not be null");
-		if (imageSources.contains(imageSource))
+		if (imageSources.contains(image))
 			throw new IllegalArgumentException("image source is already present");
-		imageSources.add(imageSource);
+		imageSources.add(image);
+	}
+		
+	void add(final List<ImageSourceDescriptor> images)
+	{
+		if (null == images)
+			throw new IllegalArgumentException("image source list may not be null");
+		if (Collections.disjoint(images, imageSources))
+				imageSources.addAll(images);
+		else
+			throw new IllegalArgumentException("image source list must be disjoint");
+		
+		
 	}
 		
 	/**
