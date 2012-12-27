@@ -1,49 +1,51 @@
 package martin.michael.patrick.conch.core.detection;
 
-
 /**
  * ImageMetrics wraps up deduced information on an image
+ * 
  * @author Patrick
- *
+ * 
  */
 public class ImageMetrics {
-	
-	private double R = 0.0;
-	private double G = 0.0;
-	private double B = 0.0;
 
 	/**
-	 * @return the R value
+	 * 
 	 */
-	public double getR() { return R; }
+	public final double red;
 	/**
-	 * @return the G value
+	 * 
 	 */
-	public double getG() { return G; }
+	public final double green;
 	/**
-	 * @return the B value
+	 * 
 	 */
-	public double getB() { return B; }
-	
+	public final double blue;
+
 	/**
 	 * constructor taking the R, G, B properties
+	 * 
 	 * @author Patrick
-	 * @param R the R geometric mean
-	 * @param G the G geometric mean
-	 * @param B the B geometric mean
+	 * @param red
+	 *            the red geometric mean
+	 * @param green
+	 *            the green geometric mean
+	 * @param blue
+	 *            the blue geometric mean
 	 */
-	public ImageMetrics(double R, double G, double B) {
-		this.R = R;
-		this.G = G;
-		this.B = B;
+	public ImageMetrics(final double red, final double green, final double blue) {
+		this.red = red;
+		this.green = green;
+		this.blue = blue;
 	}
-	
+
 	/**
-	 * default constructor 
+	 * 
 	 */
 	public ImageMetrics() {
+		red = 0.0;
+		green = 0.0;
+		blue = 0.0;
+
 	}
-	
-	
 
 }

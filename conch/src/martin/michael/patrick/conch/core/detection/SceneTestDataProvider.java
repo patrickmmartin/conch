@@ -11,15 +11,20 @@ import org.testng.annotations.DataProvider;
  * @author Patrick
  * 
  */
-public class SceneTestDataProvider {
+public final class SceneTestDataProvider {
 
+	private SceneTestDataProvider()
+	{
+		// for PMD warning
+	}
+	
 	/**
 	 * @return the trivial test set
 	 */
 	@DataProvider(name = "trivialScene")
 	public static Object[][] trivialSourceStream() {
 
-		List<ImageMetrics> imageMetricsList = new ArrayList<ImageMetrics>();
+		final List<ImageMetrics> imageMetricsList = new ArrayList<ImageMetrics>();
 		imageMetricsList.add(new ImageMetrics());
 		imageMetricsList.add(new ImageMetrics());
 		imageMetricsList.add(new ImageMetrics());
@@ -33,7 +38,7 @@ public class SceneTestDataProvider {
 	@DataProvider(name = "singleScene")
 	public static Object[][] singleSceneMetricsStream() {
 
-		List<ImageMetrics> imageMetricsList = new ArrayList<ImageMetrics>();
+		final List<ImageMetrics> imageMetricsList = new ArrayList<ImageMetrics>();
 		imageMetricsList.add(new ImageMetrics(1, 0, 0));
 		imageMetricsList.add(new ImageMetrics(1, 0, 0));
 		imageMetricsList.add(new ImageMetrics(1, 0, 0));
@@ -47,7 +52,7 @@ public class SceneTestDataProvider {
 	 */
 	@DataProvider(name = "twoScenes")
 	public static Object[][] twoSceneMetricsStream() {
-		List<ImageMetrics> imageMetricsList = new ArrayList<ImageMetrics>();
+		final List<ImageMetrics> imageMetricsList = new ArrayList<ImageMetrics>();
 		imageMetricsList.add(new ImageMetrics(1, 0, 0));
 		imageMetricsList.add(new ImageMetrics(1, 0, 0));
 		imageMetricsList.add(new ImageMetrics(1, 0, 0));

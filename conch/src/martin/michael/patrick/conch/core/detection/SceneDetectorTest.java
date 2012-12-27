@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.fail;
+
+
 /**
  * @author Patrick
  *
@@ -15,10 +18,10 @@ public class SceneDetectorTest {
  * 
  */
 @Test(dataProvider="trivialScene", dataProviderClass=SceneTestDataProvider.class)
-public void testTrivialSceneDetection(List<ImageMetrics> imageMetricsList)
+public void testTrivialSceneDetection(final List<ImageMetrics> imageMetricsList)
 {
 	// TODO this would ideally yield a SceneDescriptor with the correct results
-    throw new RuntimeException("Test not implemented");
+	fail("test not implemented");
 }
 
 /**
@@ -26,10 +29,10 @@ public void testTrivialSceneDetection(List<ImageMetrics> imageMetricsList)
  * 
  */
 @Test(dataProvider="singleScene", dataProviderClass=SceneTestDataProvider.class)
-public void testSingleSceneDetection(List<ImageMetrics> imageMetricsList)
+public void testSingleSceneDetection(final List<ImageMetrics> imageMetricsList)
 {
 	// TODO this would ideally yield a SceneDescriptor with the correct results
-    throw new RuntimeException("Test not implemented");
+	fail("test not implemented");
 }
 
 /**
@@ -37,10 +40,10 @@ public void testSingleSceneDetection(List<ImageMetrics> imageMetricsList)
  * 
  */
 @Test(dataProvider="twoScenes", dataProviderClass=SceneTestDataProvider.class)
-public void testTwoSceneDetection(List<ImageMetrics> imageMetricsList)
+public void testTwoSceneDetection(final List<ImageMetrics> imageMetricsList)
 {
 	// TODO this would ideally yield a SceneDescriptor with the correct results
-    throw new RuntimeException("Test not implemented");
+	fail("test not implemented");
 }
 
 }

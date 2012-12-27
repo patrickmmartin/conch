@@ -28,9 +28,9 @@ public class ImageMetricsFactoryTest {
 @Test
   public void buildMetrics() {
   
-	BufferedImage ri = new BufferedImage(100, 50,
+	final BufferedImage image = new BufferedImage(100, 50,
               BufferedImage.TYPE_INT_ARGB);	  
-	ImageMetrics imageMetrics = ImageMetricsFactory.buildMetrics(ri);
+	final ImageMetrics imageMetrics = ImageMetricsFactory.buildMetrics(image);
     assertNotNull(imageMetrics, "results should be returned");        
   }
   

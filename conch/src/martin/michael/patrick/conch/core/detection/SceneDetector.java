@@ -11,14 +11,19 @@ import java.util.List;
  * @author Patrick
  *
  */
-public class SceneDetector {
+public final class SceneDetector {
+	
+	private SceneDetector()
+	{
+		// for PMD warning
+	}
 	
 	/**
 	 * @return a List of the detected scenes
 	 */
 	static public List<SceneDescriptor> detectScenes()
 	{
-		List<SceneDescriptor> scenesList =  new ArrayList<SceneDescriptor>();
+		final List<SceneDescriptor> scenesList =  new ArrayList<SceneDescriptor>();
 		
 		return scenesList;
 		

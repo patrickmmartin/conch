@@ -36,21 +36,30 @@ public class ImageSourceDescriptor {
 
 	}
 	
-	final long position;
+	/**
+	 * 
+	 */
+	public final long position;
 	
-	final SourceType sourceType;
+	/**
+	 * 
+	 */
+	public final SourceType sourceType;
 	
-	final String sourceFile;
+	/**
+	 * 
+	 */
+	public final String sourceFile;
 
 	/**
-	 * @param position_ time position of the frame
-	 * @param sourceType_ type of the frame source
-	 * @param sourceFile_ the source file for the underlying data
+	 * @param position time position of the frame
+	 * @param sourceType type of the frame source
+	 * @param sourceFile the source file for the underlying data
 	 */
-	public ImageSourceDescriptor(long position_, SourceType sourceType_, String sourceFile_) {
-		this.position = position_;
-		this.sourceType = sourceType_;
-		sourceFile = sourceFile_;
+	public ImageSourceDescriptor(final long position, final SourceType sourceType, final String sourceFile) {
+		this.position = position;
+		this.sourceType = sourceType;
+		this.sourceFile = sourceFile;
 		
 	}
 

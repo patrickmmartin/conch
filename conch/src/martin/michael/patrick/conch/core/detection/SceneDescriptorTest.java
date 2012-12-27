@@ -8,7 +8,8 @@ import martin.michael.patrick.conch.core.detection.ImageSourceDescriptor.SourceT
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.fail;
 
 /**
  * testNG test for the {@link SceneDescriptor} class
@@ -18,8 +19,13 @@ import static org.testng.Assert.*;
 public class SceneDescriptorTest {
 
 	
+	private static final String DUMMY_SCENENAME = "dummy";
+
+	/**
+	 * clears prior created scenes 
+	 */
 	@BeforeMethod
-	private void clearScenes()
+	public void clearScenes()
 	{
 		SceneDescriptor.clearScenes();
 	}
@@ -29,7 +35,8 @@ public class SceneDescriptorTest {
 	 */
 	@Test
 	public void constructor() {
-		new SceneDescriptor("dummy");
+		new SceneDescriptor(DUMMY_SCENENAME);
+		fail("test not implemented");
 	}
 
 	/**
@@ -37,8 +44,8 @@ public class SceneDescriptorTest {
 	 */
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void constructDupes() {
-		new SceneDescriptor("dummy");
-		new SceneDescriptor("dummy");
+		new SceneDescriptor(DUMMY_SCENENAME);
+		new SceneDescriptor(DUMMY_SCENENAME);
 	}
 
 	/**
@@ -46,8 +53,8 @@ public class SceneDescriptorTest {
 	 */
 	@Test
 	public void imageCount() {
-		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
-		assert (0 == sceneDescriptor.imageCount());
+		final SceneDescriptor sceneDescriptor = new SceneDescriptor(DUMMY_SCENENAME);
+		assertEquals(sceneDescriptor.imageCount(), 0, "image count of new instance should be zero");
 
 	}
 
@@ -56,12 +63,14 @@ public class SceneDescriptorTest {
 	 */
 	@Test
 	public void iterator() {
-		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
+		final SceneDescriptor sceneDescriptor = new SceneDescriptor(DUMMY_SCENENAME);
 		for (@SuppressWarnings("unused") ImageSourceDescriptor f : sceneDescriptor)
 		{
 			fail("new instance should be empty");
 		}
 	}
+	
+	static private ImageSourceDescriptor dummy = null;
 	
 	/**
 	 * 
@@ -69,9 +78,9 @@ public class SceneDescriptorTest {
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testAddNull()
 	{
-		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
-		ImageSourceDescriptor dummy = null;
+		final SceneDescriptor sceneDescriptor = new SceneDescriptor(DUMMY_SCENENAME);
 		sceneDescriptor.add(dummy);
+		fail("should not get here");
 	}
 
 	/**
@@ -80,10 +89,11 @@ public class SceneDescriptorTest {
 	@Test
 	public void testAddValid()
 	{
-		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
+		final SceneDescriptor sceneDescriptor = new SceneDescriptor(DUMMY_SCENENAME);
 		sceneDescriptor.add(new ImageSourceDescriptor(0, SourceType.File, ""));
 		sceneDescriptor.add(new ImageSourceDescriptor(2, SourceType.File, ""));
 		sceneDescriptor.add(new ImageSourceDescriptor(3, SourceType.File, ""));
+		assertEquals(sceneDescriptor.imageCount(), 3, "image count should match number of additions");
 	}
 	
 	/**
@@ -92,8 +102,8 @@ public class SceneDescriptorTest {
 	@Test
 	public void testAddList()
 	{
-		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
-		List<ImageSourceDescriptor> images = new ArrayList<ImageSourceDescriptor>();
+		final SceneDescriptor sceneDescriptor = new SceneDescriptor(DUMMY_SCENENAME);
+		final List<ImageSourceDescriptor> images = new ArrayList<ImageSourceDescriptor>();
 		images.add(new ImageSourceDescriptor(0, SourceType.File, ""));
 		images.add(new ImageSourceDescriptor(2, SourceType.File, ""));
 		images.add(new ImageSourceDescriptor(3, SourceType.File, ""));
@@ -107,8 +117,8 @@ public class SceneDescriptorTest {
 	@Test(expectedExceptions=IllegalArgumentException.class)
 	public void testAddListTwice()
 	{
-		SceneDescriptor sceneDescriptor = new SceneDescriptor("dummy");
-		List<ImageSourceDescriptor> images = new ArrayList<ImageSourceDescriptor>();
+		final SceneDescriptor sceneDescriptor = new SceneDescriptor(DUMMY_SCENENAME);
+		final List<ImageSourceDescriptor> images = new ArrayList<ImageSourceDescriptor>();
 		images.add(new ImageSourceDescriptor(0, SourceType.File, ""));
 		images.add(new ImageSourceDescriptor(2, SourceType.File, ""));
 		images.add(new ImageSourceDescriptor(3, SourceType.File, ""));

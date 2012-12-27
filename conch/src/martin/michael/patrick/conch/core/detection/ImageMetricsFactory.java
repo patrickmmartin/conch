@@ -7,16 +7,22 @@ import java.awt.image.RenderedImage;
  * @author Patrick
  *
  */
-public class ImageMetricsFactory {
+public final class ImageMetricsFactory {
 
+	private ImageMetricsFactory()
+	{
+		// for PMD warning
+	}
 	/**
-	 * @param ri the RenderedImage to be analysed
+	 * @param image the RenderedImage to be analysed
 	 * @return the ImageMetrics for the RenderedImage
 	 */
-	public static ImageMetrics buildMetrics(RenderedImage ri)
+	public static ImageMetrics buildMetrics(final RenderedImage image)
 	{
-		if (ri == null)
+		if (image == null)
+		{
 			throw new IllegalArgumentException ("The image instance parameter cannot be null.");
+		}
 		return new ImageMetrics(0, 0, 0);
 	}
 	
