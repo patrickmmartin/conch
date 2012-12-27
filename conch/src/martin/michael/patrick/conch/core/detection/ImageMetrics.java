@@ -8,22 +8,22 @@ package martin.michael.patrick.conch.core.detection;
  */
 public class ImageMetrics {
 	
-	private double _R = 0.0;
-	private double _G = 0.0;
-	private double _B = 0.0;
+	private double R = 0.0;
+	private double G = 0.0;
+	private double B = 0.0;
 
 	/**
 	 * @return the R value
 	 */
-	public double getR() { return _R; }
+	public double getR() { return R; }
 	/**
 	 * @return the G value
 	 */
-	public double getG() { return _G; }
+	public double getG() { return G; }
 	/**
 	 * @return the B value
 	 */
-	public double getB() { return _B; }
+	public double getB() { return B; }
 	
 	/**
 	 * constructor taking the R, G, B properties
@@ -33,9 +33,9 @@ public class ImageMetrics {
 	 * @param B the B geometric mean
 	 */
 	public ImageMetrics(double R, double G, double B) {
-		_R = R;
-		_G = G;
-		_B = B;
+		this.R = R;
+		this.G = G;
+		this.B = B;
 	}
 	
 	/**
